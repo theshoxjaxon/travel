@@ -1,0 +1,83 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    margin: 0;
+    background-color: #0a1628;
+    color: #fff;
+    font-family: "Inter", system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    cursor: none;
+  }
+
+  /* Hide default cursor for custom cursor */
+  * {
+    cursor: none !important;
+  }
+
+  #root {
+    width: 100%;
+    min-height: 100vh;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: "Playfair Display", Georgia, serif;
+  }
+}
+
+@layer components {
+  .btn-gold {
+    @apply inline-flex items-center gap-2 bg-gold text-navy font-semibold px-6 py-3 rounded-full text-sm tracking-wider uppercase transition-all duration-300;
+  }
+  .btn-gold:hover {
+    @apply bg-gold-light scale-105 shadow-lg;
+  }
+
+  .btn-outline {
+    @apply inline-flex items-center gap-2 border border-white/40 text-white font-medium px-6 py-3 rounded-full text-sm tracking-wider uppercase transition-all duration-300;
+  }
+  .btn-outline:hover {
+    @apply border-gold text-gold bg-white/5;
+  }
+
+  .section-label {
+    @apply inline-block text-gold text-xs font-semibold tracking-[0.2em] uppercase mb-4;
+  }
+
+  .section-title {
+    @apply font-display text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight;
+  }
+
+  .card-hover {
+    @apply transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl;
+  }
+}
+
+@layer utilities {
+  .text-shadow {
+    text-shadow: 0 2px 20px rgba(0, 0, 0, 0.5);
+  }
+  .bg-blur {
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+  .gold-glow {
+    box-shadow: 0 0 20px rgba(245, 166, 35, 0.3);
+  }
+}
